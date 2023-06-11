@@ -1,15 +1,13 @@
-import { useState } from 'react'
-import GlobalStyle from './styles/GlobalStyle'
-import { Feed } from './pages/Feed'
+import GlobalStyle from "./styles/GlobalStyle";
+import { Feed } from "./pages/Feed";
 
-function App() {
-
+export const App = () => {
   return (
     <>
-    <GlobalStyle/>
-    <Feed/>
+      <GlobalStyle />
+      <Feed />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
