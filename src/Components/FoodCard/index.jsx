@@ -17,19 +17,19 @@ export const FoodCard = ({
   price,
   img,
   setProductList,
-  productList
+  productList,
 }) => {
   const addProductList = () => {
     let sameProduct = false;
     const newProduct = { id, name, price, img };
-    productList.forEach((product)=>{
-      if(product.id==newProduct.id){
+    productList.forEach((product) => {
+      if (product.id == newProduct.id) {
         sameProduct = true;
       }
-    })
-    if(!sameProduct){
+    });
+    if (!sameProduct) {
       setProductList((productList) => [...productList, newProduct]);
-      toast.success(name+" adicionado ao carrinho!", {
+      toast.success(name + " adicionado ao carrinho!", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -39,8 +39,8 @@ export const FoodCard = ({
         progress: undefined,
         theme: "colored",
       });
-    }else{
-      toast.error(name+" já está no carrinho", {
+    } else {
+      toast.error(name + " já está no carrinho", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -49,7 +49,7 @@ export const FoodCard = ({
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     }
   };
 

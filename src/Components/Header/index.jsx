@@ -14,10 +14,10 @@ export const Header = ({ handleForm, setIsOpen, productList }) => {
   };
   const handleHeaderForm = (value) => {
     setinputSearch(value);
-    if(value==""){
+    if (value == "") {
       handleForm(value);
     }
-  }
+  };
   return (
     <Container>
       <StyledHeader>

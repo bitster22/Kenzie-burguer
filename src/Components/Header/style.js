@@ -25,12 +25,12 @@ export const StyledHeader = styled.header`
     top: 70%;
     right: 60%;
   }
-  
+
   @media (max-width: 600px) {
-    .cartContainer{
-    right: 0;
-    top: 0;
-  }
+    .cartContainer {
+      right: 0;
+      top: 0;
+    }
   }
 `;
 export const Container = styled.div`

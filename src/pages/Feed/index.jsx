@@ -33,7 +33,7 @@ export const Feed = () => {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       }
     };
     getFoods();
@@ -41,7 +41,7 @@ export const Feed = () => {
 
   const handleForm = (inputSearch) => {
     setSearch(inputSearch);
-    if(inputSearch!=""){
+    if (inputSearch != "") {
       toast.success("Pesquisa realizada com sucesso!", {
         position: "top-right",
         autoClose: 3000,
@@ -51,7 +51,7 @@ export const Feed = () => {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     }
   };
 
@@ -64,7 +64,12 @@ export const Feed = () => {
       />
       <StyledList className="foodList">
         {foods.map((food) => (
-          <FoodCard key={food.id} {...food} setProductList={setProductList} productList={productList} />
+          <FoodCard
+            key={food.id}
+            {...food}
+            setProductList={setProductList}
+            productList={productList}
+          />
         ))}
       </StyledList>
       {isOpen ? (

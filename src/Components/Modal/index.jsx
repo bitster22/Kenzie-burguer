@@ -10,7 +10,7 @@ export const Modal = ({ setIsOpen, productList, setProductList }) => {
     setProductList((productList) =>
       productList.filter((product) => product.id !== productId)
     );
-    toast.success('Produto removido com sucesso!', {
+    toast.success("Produto removido com sucesso!", {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -19,12 +19,12 @@ export const Modal = ({ setIsOpen, productList, setProductList }) => {
       draggable: true,
       progress: undefined,
       theme: "colored",
-      });
+    });
   };
 
-  const removeAllProducts = () =>{
+  const removeAllProducts = () => {
     setProductList((productList) => []);
-    toast.success('Todos os produtos removidos com sucesso!', {
+    toast.success("Todos os produtos removidos com sucesso!", {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -33,8 +33,8 @@ export const Modal = ({ setIsOpen, productList, setProductList }) => {
       draggable: true,
       progress: undefined,
       theme: "colored",
-      });
-  }
+    });
+  };
 
   const totalPrice = productList.reduce((accPrice, product) => {
     return accPrice + Number(product.price);

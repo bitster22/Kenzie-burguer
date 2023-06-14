@@ -52,4 +52,11 @@ export default createGlobalStyle`
     gap: 1rem;
    }
   }
+  @media (min-width: 601px) {
+    .foodList{
+        width: 80vw;
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+  }
 `;
