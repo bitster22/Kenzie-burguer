@@ -12,10 +12,16 @@ export const Header = ({ handleForm, setIsOpen, productList }) => {
     event.preventDefault();
     handleForm(inputSearch);
   };
+  const handleHeaderForm = (value) => {
+    setinputSearch(value);
+    if(value==""){
+      handleForm(value);
+    }
+  }
   return (
     <Container>
       <StyledHeader>
-        <img src={logo} alt="" />
+        <img src={logo} alt="Logo do site Burguer Kenzie" />
         <StyledForm onSubmit={handleSubmit}>
           <CartContainer onClick={() => setIsOpen(true)}>
             <FaShoppingCart className="cartIcon" />
@@ -25,7 +31,7 @@ export const Header = ({ handleForm, setIsOpen, productList }) => {
             <StyledInput
               type="text"
               placeholder="Digitar Pesquisa"
-              onChange={(event) => setinputSearch(event.target.value)}
+              onChange={(event) => handleHeaderForm(event.target.value)}
             />
             <StyledButton className="absolute">
               <AiOutlineSearch />

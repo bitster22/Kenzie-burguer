@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  padding: 0.5rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   width: 90vw;
   margin: 0 auto;
   gap: 1rem;
+  flex-wrap: wrap;
 
   .absolute {
     position: absolute;
@@ -23,6 +24,13 @@ export const StyledHeader = styled.header`
     z-index: 0;
     top: 70%;
     right: 60%;
+  }
+  
+  @media (max-width: 600px) {
+    .cartContainer{
+    right: 0;
+    top: 0;
+  }
   }
 `;
 export const Container = styled.div`
@@ -48,4 +56,5 @@ export const CartContainer = styled.div`
   position: relative;
   align-content: center;
   cursor: pointer;
+  z-index: 1;
 `;

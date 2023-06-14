@@ -1,10 +1,11 @@
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import { Header } from "../../Components/Header";
 import { api } from "../../services/api";
 import { FoodCard } from "../../Components/FoodCard";
 import { StyledList } from "./style";
 import { Modal } from "../../Components/Modal";
-import { ProductCard } from "../../Components/ProductCard";
 
 export const Feed = () => {
   const [foods, setFoods] = useState([]);
@@ -23,7 +24,16 @@ export const Feed = () => {
 
         setFoods(response.data);
       } catch (error) {
-        console.error(error);
+        toast.error(error, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       }
     };
     getFoods();
@@ -31,6 +41,18 @@ export const Feed = () => {
 
   const handleForm = (inputSearch) => {
     setSearch(inputSearch);
+    if(inputSearch!=""){
+      toast.success("Pesquisa realizada com sucesso!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    }
   };
 
   return (
@@ -40,9 +62,9 @@ export const Feed = () => {
         setIsOpen={setIsOpen}
         productList={productList}
       />
-      <StyledList>
+      <StyledList className="foodList">
         {foods.map((food) => (
-          <FoodCard key={food.id} {...food} setProductList={setProductList} />
+          <FoodCard key={food.id} {...food} setProductList={setProductList} productList={productList} />
         ))}
       </StyledList>
       {isOpen ? (

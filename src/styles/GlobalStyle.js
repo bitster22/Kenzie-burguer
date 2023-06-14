@@ -14,6 +14,9 @@ export default createGlobalStyle`
         --color-warning: #ffcd07;
         --color-sucess: #168821;
         --color-information: #155bcb;
+
+        --toastify-color-success: var(--color-sucess);
+        --toastify-color-error: var(--color-negative);
     }
 
     *{
@@ -31,4 +34,22 @@ export default createGlobalStyle`
     ul{
         list-style: none;
     }
+
+@media (max-width: 600px) {
+   header{
+    width: 100%;
+   }
+   form{
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: -1rem;
+   }
+   .foodList{
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 1rem;
+   }
+  }
 `;

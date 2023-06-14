@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useRef } from "react";
 import { StyledButton } from "../../styles/Input";
 import { ModalHeader, ModalOverlay, StyledList, TotalValue } from "./style";
@@ -8,7 +10,31 @@ export const Modal = ({ setIsOpen, productList, setProductList }) => {
     setProductList((productList) =>
       productList.filter((product) => product.id !== productId)
     );
+    toast.success('Produto removido com sucesso!', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
   };
+
+  const removeAllProducts = () =>{
+    setProductList((productList) => []);
+    toast.success('Todos os produtos removidos com sucesso!', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+  }
 
   const totalPrice = productList.reduce((accPrice, product) => {
     return accPrice + Number(product.price);
@@ -75,7 +101,7 @@ export const Modal = ({ setIsOpen, productList, setProductList }) => {
             <p>R$ {totalPrice.toFixed(2).toString().replace(".", ",")}</p>
           </TotalValue>
 
-          <StyledButton>Remover todos</StyledButton>
+          <StyledButton onClick={removeAllProducts}>Remover todos</StyledButton>
         </div>
       </div>
     </ModalOverlay>

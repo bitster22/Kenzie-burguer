@@ -5,9 +5,11 @@ export const StyledCard = styled.li`
   border-radius: 0.3125rem;
   display: flex;
   flex-direction: column;
-  width: 18.75rem;
+  width: 100%;
+  max-width: 300px;
   height: 21.625rem;
   gap: 1rem;
+  flex-shrink: 0;
   button {
     width: 6.625rem;
     background-color: var(--color-grey-cart);
