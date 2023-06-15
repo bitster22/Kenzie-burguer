@@ -28,9 +28,12 @@ export const StyledHeader = styled.header`
 
   @media (max-width: 600px) {
     .cartContainer {
-      right: 0;
-      top: 0;
+      top: -2.6rem;
     }
+    .relative {
+      width: 100%;
+      margin-top: -2rem;
+  }
   }
 `;
 export const Container = styled.div`

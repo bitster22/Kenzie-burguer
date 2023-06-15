@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const StyledInput = styled.input`
-  width: 22.8125rem;
+  /* width: 100vw;
+  max-width: 22.8125rem; */
+  
+  /* width: min(100vw, 22.8125rem); */
+  
+
   height: 3.75rem;
   border: 0.125rem solid var(--color-grey-100);
   border-radius: 0.5rem;

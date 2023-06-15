@@ -42,14 +42,19 @@ export default createGlobalStyle`
    form{
     width: 100%;
     flex-direction: column;
+    margin: 0;  
     align-items: flex-end;
-    margin-top: -1rem;
+    //margin-top: -2.1875rem;
+    input{
+        width: 100%;
+    }
    }
    .foodList{
     overflow-x: scroll;
     flex-wrap: nowrap;
     width: 100%;
     gap: 1rem;
+    padding: 2rem;
    }
   }
   @media (min-width: 601px) {
@@ -57,6 +62,12 @@ export default createGlobalStyle`
         width: 80vw;
         gap: 3rem;
         flex-wrap: wrap;
+    }
+    form{
+        align-items: center;
+    }
+    input{
+        width: 22.8125rem;
     }
   }
 `;

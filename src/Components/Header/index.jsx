@@ -23,7 +23,7 @@ export const Header = ({ handleForm, setIsOpen, productList }) => {
       <StyledHeader>
         <img src={logo} alt="Logo do site Burguer Kenzie" />
         <StyledForm onSubmit={handleSubmit}>
-          <CartContainer onClick={() => setIsOpen(true)}>
+          <CartContainer className="cartContainer" onClick={() => setIsOpen(true)}>
             <FaShoppingCart className="cartIcon" />
             <CartCount>{productList.length}</CartCount>
           </CartContainer>
